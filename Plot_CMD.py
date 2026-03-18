@@ -49,10 +49,12 @@ iso2["JK_app"] = (iso2["Jmag"] - iso2["Kmag"]) + E_JK
 
 #plotting J-K vs K with isochrones overlaid
 plt.scatter(JK_cl, K_cl, s=8, alpha=0.6, label="Cluster stars")
-plt.plot(iso1["JK_app"], iso1["K_app"], label="Isochrone 1")
-plt.plot(iso2["JK_app"], iso2["K_app"], label="Isochrone 2")
+plt.plot(iso1["JK_app"], iso1["K_app"], label="Age1")
+plt.plot(iso2["JK_app"], iso2["K_app"], label="Age2")
 plt.gca().invert_yaxis() #convention of brightest stars being at top of axis
 plt.xlabel("J - K")
-plt.ylabel("K (mag)")
+plt.ylabel("K [mag]")
 plt.legend()
-plt.show()
+plt.savefig('./myCluster_CMD_JK.jpg', dpi=1200., bbox_inches='tight')
+plt.clf()
+plt.close()
